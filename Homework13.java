@@ -14,13 +14,17 @@ public class Homework13 {
 	  * and angle. The x and y coordinates should both be 0.
 	  * Return the Triangle.
 	  */
-	 public static Triangle problem1(int w, int h, double a) {f
+
+	 public static Triangle problem1(int w, int h, double a) {
+		 Triangle trig = new Triangle(0, 0, w, h, a);
+		 return trig;
 
 	 }
 
 	 /* Return the area of parameter s
 	  */
 	 public static double problem2(SmithShape s) {
+		 return s.getArea();
 
 	 }
 
@@ -28,6 +32,7 @@ public class Homework13 {
 	  * method of parameter s
 	  */
 	 public static String problem3(SmithShape s) {
+		 return s.toString();
 
 	 }
 
@@ -38,6 +43,8 @@ public class Homework13 {
 	  * to 180
 	  */
 	 public static double problem4(SmithShape s, double a) {
+		 double angle3 = 180.00 - ((Triangle)(s)).getAngle() - a;
+		 return angle3;
 
 	 }
 
@@ -45,7 +52,7 @@ public class Homework13 {
 	  * toSquare method of parameter s
 	  */
 	 public static Rectangle2D problem5(SmithShape s) {
-
+		 return ((Triangle) s).toSquare();
 	 }
 
 	 public static void main(String[] args) {
@@ -70,6 +77,7 @@ public class Homework13 {
 
 		 if (s.getArea() != 25.0) {
 			 passed = false;
+			 System.out.println(s.getArea());
 			 System.out.println("Fail 2");
 		 } else {
 			 System.out.println("Pass 2");
